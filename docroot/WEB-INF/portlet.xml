@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0">
+	
+	<portlet>
+		<portlet-name>sender</portlet-name>
+		<display-name>Sender Portlet</display-name>
+		<portlet-class>com.liferay.issue.SenderPortlet</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/sender/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Sender Portlet</title>
+			<short-title>Sender Portlet</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+        <supported-publishing-event>
+            <qname xmlns:x="http://liferay.com/issue">x:demo1</qname>
+        </supported-publishing-event>
+        <supported-publishing-event>
+            <qname xmlns:x="http://liferay.com/issue">x:demo2</qname>
+        </supported-publishing-event>
+	</portlet>
+	<portlet>
+		<portlet-name>receiver</portlet-name>
+		<display-name>Receiver Portlet</display-name>
+		<portlet-class>com.liferay.issue.ReceiverPortlet</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/receiver/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Receiver Portlet</title>
+			<short-title>Receiver Portlet</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+        <supported-processing-event>
+            <qname xmlns:x="http://liferay.com/issue">x:demo1</qname>
+        </supported-processing-event>
+        <supported-processing-event>
+            <qname xmlns:x="http://liferay.com/issue">x:demo2</qname>
+        </supported-processing-event>
+	</portlet>
+    <event-definition>
+        <qname xmlns:x="http://liferay.com/issue">x:demo1</qname>
+        <value-type>java.lang.String</value-type>
+    </event-definition>
+    <event-definition>
+        <qname xmlns:x="http://liferay.com/issue">x:demo2</qname>
+        <value-type>java.lang.String</value-type>
+    </event-definition>
+</portlet-app>
